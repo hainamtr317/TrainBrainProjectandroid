@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
 import CustomHeader from '../components/header';
-import BlackSquareGame from '../components/gameplayofremember';
-import ScoreDisplay from '../components/scoredisplay';
 import { useSelector } from 'react-redux';
+import ScoreDisplay from '../components/scoredisplay';
+import MemoryImages from '../components/memoryimage';
 
-const RememberColor=()=>{
+export default function RememberImages(){
   const score = useSelector((state)=>state.counter)
     return(
       <View style={{flex: 1}}>
@@ -18,12 +18,10 @@ const RememberColor=()=>{
         }}>
         <ScoreDisplay/>
         </View>
-        
       </View>
-      {/* <View style={{flex: 1, backgroundColor: 'skyblue'}} /> */}
-      <View style={styles.GamePlay}>
-      <BlackSquareGame/>
-      </View>
+        <View style={styles.GamePlay}>
+        <MemoryImages/>
+        </View>
     </View>
     )   
 }
@@ -51,5 +49,3 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   }
 });
-
-export default RememberColor

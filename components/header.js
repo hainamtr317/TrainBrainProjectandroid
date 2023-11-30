@@ -2,13 +2,17 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons'; // Assuming you are using Expo for vector icons
 // import { useNavigation } from '@react-navigation/native';
-
+import { useDispatch } from 'react-redux';
+import { reset } from '../redux/action';
 const CustomHeader = ({ title }) => {
 //   const navigation = useNavigation();
-
+const dispatch = useDispatch()
+const handleresetscore = () => {
+  dispatch(reset());
+};
   return (
     <View style={styles.header}>
-      <TouchableOpacity >
+      <TouchableOpacity onPress={handleresetscore}>
         <MaterialIcons name="arrow-back" size={24} color="black" />
       </TouchableOpacity>
       <Text style={styles.title}>{title}</Text>

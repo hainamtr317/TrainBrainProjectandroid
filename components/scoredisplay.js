@@ -1,10 +1,12 @@
 import { View, Text, StyleSheet} from "react-native";
+import { useSelector } from 'react-redux';
 
-export default function ScoreDisplay(Score){
+export default function ScoreDisplay(){
+  const score = useSelector((state)=>state.counter)
     return(
         <View style={styles.container}>
         <View style={styles.scoreBox}>
-            <Text style={styles.scoreText}>Score:{Score}</Text>
+            <Text style={styles.scoreText}>Score:{score}</Text>
         </View>
         </View>
     )
